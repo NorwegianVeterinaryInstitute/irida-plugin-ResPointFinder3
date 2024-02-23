@@ -1,0 +1,15 @@
+Everytime we add a new plugin or adding a newer version of a plugin to IRIDA we need to restart IRIDA (tomcat). So, IRIDA can read the info about new plugin and update its database
+
+Apologies for restarting Tomcat without informing both of you and users
+
+1. Jeevan added ResPointFinder2 on Wednesday (24th of May) night. 
+2. Jannice reported that ResPointFinder2 is not adding all the results to Linelist and missing the "Gene names" on Friday through workplace chat.  
+3. Jeevan modified/fixed the issue and added the plugin to "/etc/irida/plugins/" folder on Friday (26th May) afternoon. But due to circumstances on that Friday afternoon, Jeevan forgot about restarting IRIDA. So, Plugin folder has the newer plugin but the information is not updated to IRIDA. 
+4. Monday morning, when Jannice submitted ResPointFinder2 pipeline, IRIDA couldnt find the older plugin based on the information it has in the database. So, it couldn't transfer the pipeline details to galaxy and displayed "No job error information available as IRIDA was unable to make connection to Galaxy. Please contact the administrator." The error message is misleading. 
+5. When Jeevan checked in Galaxy, there was no history corresponding to failed-ResPointFinder2 jobs.  Jeevan assumed that its connection is lost between Galaxy and IRIDA.  (In the mean time, Jannice added an issue about the ResPointFinder2 and missing data in LineList). 
+6. Jeevan Realizing that the IRIDA was not restarted (and today is the last day for EFSA report), restarted Tomcat without thinking/hesitation to fix it pipeline for jannice to make EFSA report. 
+(George comes here and start digging for the errors)
+7. Newer version of the pipeline works But it adds sample_ID also to Linelist. So, jeevan went back and fixed the error in the pipeline using his mac and trasferred the new plugin to "/etc/irida/plugin/"
+8. Again, there is a new plugin in the folder, but information about that was not added to IRIDA since tomcat was not restarted. 
+9. Until now, In Jeevan's mind it was a connection issue between IRIDA and galaxy.
+10. Now, ResPointFinder2 fails again with same error. Now, Jeevan realised where things are going wrong and requests george to restart tomcat. 

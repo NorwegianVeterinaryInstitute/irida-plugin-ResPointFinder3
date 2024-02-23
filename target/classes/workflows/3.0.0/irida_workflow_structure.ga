@@ -1,0 +1,293 @@
+{
+  "a_galaxy_workflow" : "true",
+  "annotation" : "EFSA2023",
+  "format-version" : "0.1",
+  "name" : "ResPointFinder3",
+  "steps" : {
+    "0" : {
+      "workflow_outputs" : [ ],
+      "input_connections" : { },
+      "label" : "sequence_reads_pair",
+      "id" : 0,
+      "tool_state" : "{\"optional\": false, \"collection_type\": \"list:paired\"}",
+      "errors" : null,
+      "position" : {
+        "bottom" : 459.6953125,
+        "height" : 82.1953125,
+        "left" : 350,
+        "right" : 550,
+        "top" : 377.5,
+        "width" : 200,
+        "x" : 350,
+        "y" : 377.5
+      },
+      "name" : "Input dataset collection",
+      "uuid" : "2e0f6758-09a4-469e-a074-b1d856f38acd",
+      "outputs" : [ ],
+      "type" : "data_collection_input",
+      "tool_version" : null,
+      "annotation" : "",
+      "inputs" : [ {
+        "description" : "",
+        "name" : "sequence_reads_pair"
+      } ],
+      "content_id" : null,
+      "tool_id" : null
+    },
+    "1" : {
+      "workflow_outputs" : [ {
+        "label" : null,
+        "output_name" : "output",
+        "uuid" : "0bb6dea9-3535-4a47-b856-f4a9d5925c67"
+      } ],
+      "input_connections" : {
+        "input_type_cond|reads_collection" : {
+          "id" : 0,
+          "output_name" : "output"
+        }
+      },
+      "label" : null,
+      "id" : 1,
+      "tool_state" : "{\"input_type_cond\": {\"input_type\": \"paired\", \"__current_case__\": 2, \"reads_collection\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+      "errors" : null,
+      "position" : {
+        "bottom" : 389.4921875,
+        "height" : 133.9921875,
+        "left" : 685,
+        "right" : 885,
+        "top" : 255.5,
+        "width" : 200,
+        "x" : 685,
+        "y" : 255.5
+      },
+      "name" : "Extract sample names",
+      "uuid" : "e82c0c6c-3459-424c-b556-91a56e3f0692",
+      "outputs" : [ {
+        "name" : "output",
+        "type" : "txt"
+      } ],
+      "tool_shed_repository" : {
+        "changeset_revision" : "54380a6171b8",
+        "name" : "sample_names",
+        "owner" : "greg",
+        "tool_shed" : "toolshed.g2.bx.psu.edu"
+      },
+      "type" : "tool",
+      "tool_version" : "1.0+galaxy2",
+      "annotation" : "",
+      "inputs" : [ ],
+      "post_job_actions" : { },
+      "content_id" : "toolshed.g2.bx.psu.edu/repos/greg/sample_names/sample_names/1.0+galaxy2",
+      "tool_id" : "toolshed.g2.bx.psu.edu/repos/greg/sample_names/sample_names/1.0+galaxy2"
+    },
+    "2" : {
+      "workflow_outputs" : [ {
+        "label" : null,
+        "output_name" : "output1",
+        "uuid" : "39277b3f-f7bb-4bd5-b6e6-4e1d7c869af6"
+      }, {
+        "label" : null,
+        "output_name" : "output2",
+        "uuid" : "2d98d446-9cc5-49d5-84cd-2dbcc9871541"
+      }, {
+        "label" : "DisinFinder results",
+        "output_name" : "output3",
+        "uuid" : "241d876c-db5d-4bdc-9824-5058c8f3a73a"
+      } ],
+      "input_connections" : {
+        "input1" : {
+          "id" : 0,
+          "output_name" : "output"
+        }
+      },
+      "label" : null,
+      "id" : 2,
+      "tool_state" : "{\"input1\": {\"__class__\": \"RuntimeValue\"}, \"species_name\": \"Campylobacter\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+      "errors" : null,
+      "position" : {
+        "bottom" : 704.484375,
+        "height" : 255.984375,
+        "left" : 686,
+        "right" : 886,
+        "top" : 448.5,
+        "width" : 200,
+        "x" : 686,
+        "y" : 448.5
+      },
+      "name" : "ResPointFinder_4.4.2",
+      "uuid" : "6edb2d6b-229f-4dd6-b450-75ba2bd75fb6",
+      "outputs" : [ {
+        "name" : "output1",
+        "type" : "tabular"
+      }, {
+        "name" : "output2",
+        "type" : "tabular"
+      }, {
+        "name" : "output3",
+        "type" : "tabular"
+      } ],
+      "type" : "tool",
+      "tool_version" : "4.4.2+galaxy1",
+      "annotation" : "",
+      "inputs" : [ {
+        "description" : "runtime parameter for tool ResPointFinder_4.4.2",
+        "name" : "input1"
+      } ],
+      "post_job_actions" : { },
+      "content_id" : "ResPointFinder_4.4.2",
+      "tool_id" : "ResPointFinder_4.4.2"
+    },
+    "3" : {
+      "workflow_outputs" : [ {
+        "label" : null,
+        "output_name" : "output2",
+        "uuid" : "7343b06c-4f16-47fa-aabd-fb7366eb2621"
+      }, {
+        "label" : null,
+        "output_name" : "output3",
+        "uuid" : "090bba96-99fe-4571-bece-948a84d8cc15"
+      }, {
+        "label" : null,
+        "output_name" : "output4",
+        "uuid" : "59d351ae-6503-4420-812b-63d7ec061892"
+      }, {
+        "label" : "DisinfectantFinder Final Output",
+        "output_name" : "output5",
+        "uuid" : "20dd6906-6e97-4424-831e-634a8f71591f"
+      }, {
+        "label" : null,
+        "output_name" : "output1",
+        "uuid" : "808872f8-4c86-4a47-b93b-80405d2b34d0"
+      } ],
+      "input_connections" : {
+        "input1" : {
+          "id" : 2,
+          "output_name" : "output2"
+        },
+        "input2" : {
+          "id" : 2,
+          "output_name" : "output1"
+        },
+        "input3" : {
+          "id" : 1,
+          "output_name" : "output"
+        },
+        "input4" : {
+          "id" : 2,
+          "output_name" : "output3"
+        }
+      },
+      "label" : null,
+      "id" : 3,
+      "tool_state" : "{\"input1\": {\"__class__\": \"RuntimeValue\"}, \"input2\": {\"__class__\": \"RuntimeValue\"}, \"input3\": {\"__class__\": \"RuntimeValue\"}, \"input4\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+      "errors" : null,
+      "position" : {
+        "bottom" : 739.4765625,
+        "height" : 407.9765625,
+        "left" : 1062,
+        "right" : 1262,
+        "top" : 331.5,
+        "width" : 200,
+        "x" : 1062,
+        "y" : 331.5
+      },
+      "name" : "ResPointFinder_Format_4.0",
+      "uuid" : "eec23822-07ad-4265-a2ea-9a53376d4958",
+      "outputs" : [ {
+        "name" : "output1",
+        "type" : "txt"
+      }, {
+        "name" : "output2",
+        "type" : "txt"
+      }, {
+        "name" : "output3",
+        "type" : "txt"
+      }, {
+        "name" : "output4",
+        "type" : "txt"
+      }, {
+        "name" : "output5",
+        "type" : "txt"
+      } ],
+      "type" : "tool",
+      "tool_version" : "@TOOL_VERSION@+galaxy1",
+      "annotation" : "",
+      "inputs" : [ {
+        "description" : "runtime parameter for tool ResPointFinder_Format_4.0",
+        "name" : "input1"
+      }, {
+        "description" : "runtime parameter for tool ResPointFinder_Format_4.0",
+        "name" : "input2"
+      }, {
+        "description" : "runtime parameter for tool ResPointFinder_Format_4.0",
+        "name" : "input3"
+      }, {
+        "description" : "runtime parameter for tool ResPointFinder_Format_4.0",
+        "name" : "input4"
+      } ],
+      "post_job_actions" : {
+        "ChangeDatatypeActionoutput1" : {
+          "action_arguments" : {
+            "newtype" : "tabular"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "output1"
+        },
+        "ChangeDatatypeActionoutput3" : {
+          "action_arguments" : {
+            "newtype" : "tsv"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "output3"
+        },
+        "ChangeDatatypeActionoutput4" : {
+          "action_arguments" : {
+            "newtype" : "tsv"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "output4"
+        },
+        "ChangeDatatypeActionoutput5" : {
+          "action_arguments" : {
+            "newtype" : "tsv"
+          },
+          "action_type" : "ChangeDatatypeAction",
+          "output_name" : "output5"
+        },
+        "RenameDatasetActionoutput1" : {
+          "action_arguments" : {
+            "newname" : "formatted_output.tsv"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "output1"
+        },
+        "RenameDatasetActionoutput3" : {
+          "action_arguments" : {
+            "newname" : "ResFinder_Final.tsv"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "output3"
+        },
+        "RenameDatasetActionoutput4" : {
+          "action_arguments" : {
+            "newname" : "PointFinder_Final.tsv"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "output4"
+        },
+        "RenameDatasetActionoutput5" : {
+          "action_arguments" : {
+            "newname" : "Disinfectant_Final.tsv"
+          },
+          "action_type" : "RenameDatasetAction",
+          "output_name" : "output5"
+        }
+      },
+      "content_id" : "ResPointFinder_Format_4.0",
+      "tool_id" : "ResPointFinder_Format_4.0"
+    }
+  },
+  "tags" : [ ],
+  "uuid" : "7f5a36e5-ce5b-49da-b4be-02e33c2fca16",
+  "version" : 4
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iridaWorkflow>
+  <id>b39c454b-f71c-4208-9f6c-72194bfb95ff</id>
+  <name>ResPointFinder3</name>
+  <version>3.0.0</version>
+  <analysisType>ResPointFinder3</analysisType>
+  <inputs>
+    <sequenceReadsPaired>sequence_reads_pair</sequenceReadsPaired>
+    <requiresSingleSample>true</requiresSingleSample>
+  </inputs>
+  <parameters>
+    <!--parameter name="sample_names-1-input_type_cond.input_type" defaultValue="paired">
+      <toolParameter toolId="e82c0c6c-3459-424c-b556-91a56e3f0692" parameterName="input_type_cond.input_type"/>
+    </parameter-->
+    <!--parameter name="ResPointFinder_4.4.2-2-species_name" defaultValue="Campylobacter"-->
+    <parameter name="ResPointFinder_4.4.2-2-species_name" required="true">
+        <choices>
+          <choice value="Campylobacter" name="Campylobacter" />
+          <choice value="Campylobacter jejuni" name="Campylobacterjejuni" />
+          <choice value="Campylobacter coli" name="Campylobactercoli" />
+          <choice value="Enterococcus faecalis" name="Enterococcusfaecalis" />
+          <choice value="Enterococcus faecium" name="Enterococcusfaecium" />
+          <choice value="Escherichia coli" name="Escherichiacoli" />
+          <choice value="Helicobacter pylori" name="Helicobacterpylori" />
+          <choice value="Klebsiella" name="Klebsiella" />
+          <choice value="Mycobacterium tuberculosis" name="Mycobacteriumtuberculosis" />
+          <choice value="Neisseria gonorrhoeae" name="Neisseriagonorrhoeae" />
+          <choice value="Plasmodium falciparum" name="Plasmodiumfalciparum" />
+          <choice value="Salmonella" name="Salmonella" />
+          <choice value="Salmonella enterica" name="Salmonellaenterica" />
+          <choice value="Staphylococcus aureus" name="Staphylococcusaureus" />
+          <!--choice value="Other" name="Other" /-->
+        </choices>
+      <toolParameter toolId="6edb2d6b-229f-4dd6-b450-75ba2bd75fb6" parameterName="species_name"/>
+    </parameter>
+  </parameters>
+  <outputs>
+    <output name="formatted_output.tsv" fileName="formatted_output.tsv"/>
+    <output name="ResFinder_Final.tsv" fileName="ResFinder_Final.tsv"/>
+    <output name="PointFinder_Final.tsv" fileName="PointFinder_Final.tsv"/>
+    <output name="Disinfectant_Final.tsv" fileName="Disinfectant_Final.tsv"/>
+  </outputs>
+  <toolRepositories>
+    <repository>
+      <name>sample_names</name>
+      <owner>greg</owner>
+      <url>https://toolshed.g2.bx.psu.edu</url>
+      <revision>54380a6171b8</revision>
+    </repository>
+  </toolRepositories>
+</iridaWorkflow>
